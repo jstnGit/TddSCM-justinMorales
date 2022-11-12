@@ -28,7 +28,7 @@ public class EmployeeRepositoryTest {
 
     @Test
     @DisplayName("Test Repository FindAll")
-    void TestfindAll() {
+    void testFindAll() {
         //arrange
         List<Employee> findEmployee=employeeRepository.saveAll(employees);
         //act
@@ -39,7 +39,7 @@ public class EmployeeRepositoryTest {
 
     @Test
     @DisplayName("Test Repository FindById Positive Output")
-    void TestPositivefindById() {
+    void testPositivefindById() {
         //arrange
         employeeRepository.saveAll(employees);
         Optional<Employee> findEmployeeById=employeeRepository.findById(1L);
@@ -51,9 +51,9 @@ public class EmployeeRepositoryTest {
 
     @Test
     @DisplayName("Test Repository save and if the Id is working" +
-                "WHEN save is Executed with ID value=1" +
-                "THEN result should return 1")
-    void Testsave() {
+                "WHEN save is Executed with ID value=4" +
+                "THEN result should return 4")
+    void testSave() {
         //arrange
         Employee savedEmployee = employeeRepository.save(testSave);
         //act
@@ -61,6 +61,6 @@ public class EmployeeRepositoryTest {
         //assert
 
         assertNotNull(savedEmployee);
-        assertEquals(1L,savedEmployee.getId());
+        assertEquals(4L,savedEmployee.getId());
     }
 }
