@@ -58,7 +58,7 @@ public class EmployeeControllerTest {
 
     @Test
     @DisplayName("GIVEN employees from SQL in data.sql" +
-            "WHEN getEmployeeById is executed with value = 1" +
+            "WHEN getEmployeeById is executed with value = 1 " +
             "THEN result should return test1")
     void testGetEmployeeById() throws Exception {
         //arrange
@@ -74,7 +74,7 @@ public class EmployeeControllerTest {
 
     @Test
     @DisplayName("GIVEN employees from SQL in data.sql" +
-            "WHEN getEmployeeById is executed with value = 1" +
+            "WHEN saveEmployee is executed " +
             "THEN result should return test1")
     void testSaveEmployee() throws Exception {
         //arrange

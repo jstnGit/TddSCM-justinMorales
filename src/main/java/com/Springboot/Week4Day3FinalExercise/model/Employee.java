@@ -2,14 +2,22 @@ package com.Springboot.Week4Day3FinalExercise.model;
 
 import javax.persistence.*;
 @Entity
+@Table
 public class Employee {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column
     private String name;
+    @Column
     private int age;
+    @Column
     private Double salary;
+    @Column
     private String position;
+
+    public Employee() {
+    }
 
     public Employee(Long id, String name, int age, Double salary, String position) {
         this.id = id;
@@ -19,7 +27,11 @@ public class Employee {
         this.position = position;
     }
 
-    public Employee() {
+    public Employee(String name, int age, Double salary, String position) {
+        this.name = name;
+        this.age = age;
+        this.salary = salary;
+        this.position = position;
     }
 
     public Long getId() {
@@ -28,13 +40,6 @@ public class Employee {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Employee(String name, int age, Double salary, String position) {
-        this.name = name;
-        this.age = age;
-        this.salary = salary;
-        this.position = position;
     }
 
     public String getName() {

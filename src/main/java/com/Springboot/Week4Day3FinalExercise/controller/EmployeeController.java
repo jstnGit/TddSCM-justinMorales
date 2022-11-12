@@ -24,15 +24,15 @@ public class EmployeeController {
         List<Employee> employee = employeeService.findAllEmployee();
         return employee;
     }
-
     @GetMapping("/{id}")
     public Employee getEmployeeById(@PathVariable Long id) throws RecordNotFoundException {
         return employeeService.findEmployeeById(id);
     }
-
     @PostMapping("")
     public Employee saveEmployee(@RequestBody Employee employee){
         return employeeService.saveEmployee(employee);
     }
+
+
 
 }
