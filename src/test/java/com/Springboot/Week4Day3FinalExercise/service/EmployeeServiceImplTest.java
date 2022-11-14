@@ -3,8 +3,6 @@ package com.Springboot.Week4Day3FinalExercise.service;
 import com.Springboot.Week4Day3FinalExercise.Exception.RecordNotFoundException;
 import com.Springboot.Week4Day3FinalExercise.model.Employee;
 import com.Springboot.Week4Day3FinalExercise.repository.EmployeeRepository;
-import com.Springboot.Week4Day3FinalExercise.service.EmployeeService;
-import com.Springboot.Week4Day3FinalExercise.service.EmployeeServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -13,12 +11,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.http.HttpStatus;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -48,7 +42,7 @@ public class EmployeeServiceImplTest {
     @DisplayName("GIVEN employees from SQL in data.sql " +
             "WHEN getAllEmployees is executed " +
             "THEN result should return test1,test2 and test3")
-    public void testFindALl () {
+    public void testFindAll () {
 
         Mockito.when(employeeRepository.findAll())
                 .thenReturn(employees);
@@ -79,7 +73,7 @@ public class EmployeeServiceImplTest {
     @DisplayName("GIVEN employees from SQL in data.sql " +
             "WHEN getEmployee is executed with input 51" +
             "THEN result should return RecordNotFoundException")
-    public void testNegativeFindById () throws RecordNotFoundException {
+    public void testNegativeFindById () {
         //arrange
         Long id=51L;
         //act
@@ -92,7 +86,7 @@ public class EmployeeServiceImplTest {
     @DisplayName("GIVEN employees from SQL in data.sql " +
             "WHEN getAllEmployeesThatAreEarningMoreThan is executed with input 90000" +
             "THEN result should return test2 and test3")
-    public void testUpdateEmployee () throws RecordNotFoundException {
+    public void testUpdateEmployee () {
         //arrange
         Mockito.when(employeeRepository.findAll())
                 .thenReturn(employees);

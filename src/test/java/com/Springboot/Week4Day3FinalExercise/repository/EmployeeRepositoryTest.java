@@ -1,8 +1,6 @@
 package com.Springboot.Week4Day3FinalExercise.repository;
 
-import com.Springboot.Week4Day3FinalExercise.Exception.RecordNotFoundException;
 import com.Springboot.Week4Day3FinalExercise.model.Employee;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,7 +37,7 @@ public class EmployeeRepositoryTest {
 
     @Test
     @DisplayName("Test Repository FindById Positive Output")
-    void testPositivefindById() {
+    void testPositiveFindById() {
         //arrange
         employeeRepository.saveAll(employees);
         Optional<Employee> findEmployeeById=employeeRepository.findById(1L);
